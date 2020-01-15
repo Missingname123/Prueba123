@@ -1,0 +1,11 @@
+.list-groupstyle{
+    margin-left:20px;
+    margin-right: 20px;
+    margin-bottom:20px;
+}
+.listano{
+    list-style:none;
+}
+.modal.show{
+    display: block;
+}

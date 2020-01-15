@@ -1,0 +1,35 @@
+<div *ngIf="auth.user$ | async as user; else login">
+   <form 
+   style="margin-left:30px"
+    class="form-inline justify-content-center estilogroup"
+    [formGroup]="form"
+    (ngSubmit)="crearProducto()" 
+    >
+        <div class="form-group estiloFormGroup mx-auto" >
+        <label for="NombreProducto">Nombre Producto:</label>
+        <input 
+        type="text" 
+        class="form-control stilo1" 
+        id="NombreProducto"
+        formControlName="nombre" 
+        aria-describedby="NombreProducto" 
+        placeholder="Ingresa el nombre del producto">
+        <label for="preciolabel">Precio:</label>
+        <input 
+        type="number" 
+        class="form-control stilo1" 
+        id="precioid"
+        formControlName="precio" 
+        placeholder="Ingresa el precio">
+        <label for="imageURLlabel">Url Imagen:</label>
+        <input
+        type="text" 
+        class="form-control stilo1" 
+        formControlName="imageURL" 
+        placeholder="Ingresa la url">
+        </div>
+        <div class="col text-center buttonop">
+            <button style="margin-top: 10px;" type="submit" class="btn btn-primary">¡¡Crear!!</button>
+        </div>
+    </form>
+</div>

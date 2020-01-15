@@ -1,0 +1,12 @@
+<ul class="list-group list-groupstyle">
+    <li
+     class="list-group-item"
+     *ngFor='let producto of producto$|async;'>
+     <ul class="listano">
+         <li><img [src]='producto.imageURL' style='width: 50px;'> </li>
+         <li>{{producto.nombre}}</li>
+         <li>$ {{producto.precio}}</li>
+     </ul>
+     </li>
+    
+</ul>

@@ -1,0 +1,17 @@
+
+<p class="h3 mx-auto text-center" style="width: 1500px;">Productos publicados recientemente:</p>
+<br>
+
+<div class="card-deck card-deck2">
+
+    <div *ngFor='let producto of producto$| async;'>
+        <div class="card text-center  card-style-margin" style="width: 18rem;">
+            <img class="card-img-top" [src]='producto.imageURL' style="height:100px ;">
+            <div class="card-body">
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              <p class="card-text">$ {{producto.precio}}</p>
+              <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+          </div>
+    </div>
+</div>
