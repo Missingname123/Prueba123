@@ -16,9 +16,13 @@
       </div>
       <div class="card"style="padding: 6px; margin: 5px;">
         <h5 class="card-title text-center">Productos publicados:</h5>
-        <!-- <ul style="list-style: none;">
-          <li class="card-text" ><img [src]="producto.imageURL"style="height:20px;width:20px">{{producto.nombre}}</li>
-        </ul> -->
+    
+        <div *ngIf="(listaproductovendidosusuario | async); listaProductos">
+          
+              <ul *ngFor="let producto of listaProductos" style="list-style: none;">
+                <li class="card-text" ><img [src]="producto.imageURL"style="height:20px;width:20px">{{producto.nombre}}</li>
+              </ul> 
+        </div>
       </div>
       
     </div>

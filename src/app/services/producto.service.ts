@@ -36,8 +36,8 @@ export class ProductoService {
     return this.productoList.doc(key).update(value);
   }
   getProductforUserId(uId){
-    return this.productosfiltr = this.db.collection('/productos',
-    ref =>ref.where('usuarioVendedor','==',uId));
+
+    return this.productosfiltr = this.db.collection('/productos', ref =>ref.where('usuarioVendedor','==',`${uId}`));
     
   }
 

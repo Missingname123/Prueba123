@@ -20,6 +20,8 @@ import {Usuario} from './modelos/usuario.model';
 })
 export class UsuarioService {
   user$:Observable<Usuario>;
+  private uid: String;
+
   constructor(
     private afAuth:AngularFireAuth,
     private afs: AngularFirestore,
@@ -39,10 +41,14 @@ export class UsuarioService {
     )
   }
 
+  getUid(){
+    return this.uid;
+  }
 
   async googleSignin(){
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
+    this.uid = credential.user.uid;
     return this.updateUserData(credential.user);
   }
 
